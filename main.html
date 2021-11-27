@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8" />
+    <title>Task</title>
+    <style>
+        body { display: flex;
+        
+             align-items: center;
+             margin-left: auto;
+            margin-right: auto;
+            margin-top: 200px;
+            width: 15em;
+             }
+ 
+         button {
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid rgb(15, 7, 7);
+            border-radius: 5px;
+            box-shadow: 2px 2px gray;
+            font: bold 2em Impact;
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="row">
+            <button onclick="someFn()">task_1</button>
+            <button onclick="sayHello()">task_2</button>
+            <button onclick="filterStrings()">task_3</button>
+        </div>
+       
+    
+    <script>
+        function someFn(){
+          let word=prompt("Введите слово:", "слово");
+          alert(word[0].toUpperCase()+word.slice(1, word.length).toLowerCase());
+        }
+
+        function sayHello(){
+          let name=prompt("Введите имя:", "имя")
+          if (name==="mark"|"Mark") {
+              alert("Hi, Mark")
+            }
+          else {
+              alert("Hello, "+name)
+            };
+        }
+
+        function filterStrings(){     
+        let arr=[];
+        let number=parseInt(prompt("Введите максимальную длину строки:", 10));
+         do {
+		     str=prompt("Введите строку:", "cтрока");
+		     arr.push(str);
+	     }
+	    while(confirm("Продолжим?"))
+	    alert("Исходный массив строк: "+arr);
+        //  let arr4=[]
+      
+        // for (var i = 0; i < arr.length; i++) {
+        //    let arr2=arr[i].split('');
+        //    if( arr2.length<number) arr4.push(arr[i]);
+        // }
+        var arr4 = arr.map(function(n) {
+            if( n.split('').length<=number) return n;
+            });
+        alert("Массив элементы которого не длинне "+number+":"+arr4)
+          }
+    </script>
+</body>
