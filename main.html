@@ -59,12 +59,7 @@
 	     }
 	    while(confirm("Продолжим?"))
 	    alert("Исходный массив строк: "+arr);
-        //  let arr4=[]
       
-        // for (var i = 0; i < arr.length; i++) {
-        //    let arr2=arr[i].split('');
-        //    if( arr2.length<number) arr4.push(arr[i]);
-        // }
         var arr4 = arr.map(function(n) {
             if( n.split('').length<=number) return n;
             });
